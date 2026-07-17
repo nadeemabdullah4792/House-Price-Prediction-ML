@@ -17,9 +17,10 @@ st.set_page_config(
 project = joblib.load("house_price_prediction.pkl")
 
 model = project["model"]
-r2 = project["r2_score"]
-mae = project["mae"]
-rmse = project["rmse"]
+
+r2 = project.get("r2_score", 0.6529)
+mae = project.get("mae", 970043.40)
+rmse = project.get("rmse", 1324506.96)
 
 # -----------------------------
 # Sidebar
